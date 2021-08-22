@@ -1,9 +1,9 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+// @ts-ignore
+import { ComponentMeta } from '@storybook/react';
 import '../styles/sphere.css';
 import '../styles/globals.css';
-import normalMap from './assets/normal-map.png';
-
+import texture from './assets/normal-map.png';
 import Sphere from '../pages/components/sphere';
 
 
@@ -20,6 +20,6 @@ export default {
  */
 export const FeelTheSphere = () => {
   return (
-    <Sphere texture={normalMap} />
+    <Sphere texture={texture} />
   );
 };
