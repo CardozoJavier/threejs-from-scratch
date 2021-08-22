@@ -4,15 +4,14 @@ import * as dat from 'dat.gui'
 
 const { useEffect } = React;
 
-export default function Sphere(props: {}) {
+export default function Sphere(props: { texture: StaticImageData }) {
 
   function initialize() {
-    if (typeof window === undefined) return
     // Debug
     const gui = new dat.GUI()
     // Loading
     const textureLoader = new THREE.TextureLoader();
-    const normalTexture = textureLoader.load('/images/normal-map.png')
+    const normalTexture = textureLoader.load(props.texture.toString())
     // Canvas
     const canvas = (document.querySelector('canvas.webgl') as HTMLCanvasElement | OffscreenCanvas | undefined);
     // Scene
